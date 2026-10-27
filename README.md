@@ -39,14 +39,28 @@ A digital clock designed using **Verilog HDL** and implemented on an FPGA using 
 ## Project Structure
 
 ```text
+
 Digital-Clock-Verilog-FPGA/
-├── digital_clock.v
-├── clock_divider.v
-├── seconds_counter.v
-├── minutes_counter.v
-├── hour_counter.v
-├── digital_clock.xdc
-└── README.md
+│
+├── README.md
+│
+├── rtl/
+│   ├── digital_clock.v
+│   ├── clock_divider.v
+│   ├── seconds_counter.v
+│   ├── minutes_counter.v
+│   └── hour_counter.v
+│
+├── constraints/
+│   └── digital_clock.xdc
+│
+├── testbench/
+│   └── digital_clock_testbench.v
+│
+└── docs/
+    ├── rtl_block_diagram.png
+    └── simulation_waveform.png
+
 ```
 
 ## Design Modules
