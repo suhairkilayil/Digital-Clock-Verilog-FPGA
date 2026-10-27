@@ -1,0 +1,45 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 10/26/2026 05:47:23 PM
+// Design Name: 
+// Module Name: hour_counter
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module hour_counter(
+input clk,
+input reset,
+input enable,
+output reg[4:0] hr
+
+    );
+    
+ always @( posedge clk or posedge reset ) begin 
+   if (reset) begin 
+     hr <= 5'd0;
+   end
+   else if ( enable) begin
+    if ( hr == 5'd23 )begin 
+     hr <= 5'd0;
+   end
+   
+   else begin 
+      hr <= hr + 1'b1;
+   end
+ end
+ end
+endmodule
