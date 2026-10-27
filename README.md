@@ -59,7 +59,7 @@ Digital-Clock-Verilog-FPGA/
 │
 └── docs/
     ├── rtl_block_diagram.png
-    ├── simulation_waveform.png
+    ├── hardware status.png
     ├── ila_waveform.png
     └── vio_reset_control.png
 
