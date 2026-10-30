@@ -24,6 +24,8 @@ module hour_counter(
 input clk,
 input reset,
 input enable,
+input set_time,
+input [5:0] set_hr,
 output reg[4:0] hr
 
     );
@@ -32,6 +34,9 @@ output reg[4:0] hr
    if (reset) begin 
      hr <= 5'd0;
    end
+   else if (set_time)begin
+        hr <= (set_hr <= 5'd23) ? set_hr : 5'd0;
+     end
    else if ( enable) begin
     if ( hr == 5'd23 )begin 
      hr <= 5'd0;
