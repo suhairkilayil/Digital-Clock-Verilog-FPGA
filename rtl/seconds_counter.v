@@ -23,6 +23,8 @@
 module seconds_counter(
 input clk,
 input reset,
+input set_time,
+input [5:0] set_sec,
 output reg[5:0] sec
 
     );
@@ -30,7 +32,9 @@ always@( posedge clk or posedge reset) begin
   if (reset ) begin 
    sec <= 6'd0;
   end
-  
+  else if (set_time) begin
+    sec <= (set_sec <= 6'd59) ? set_sec : 6'd0;
+   end
   else if( sec == 6'd59) begin 
     sec <= 6'b0;
     
